@@ -1,0 +1,24 @@
+{
+  "name": "microservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:user": "cd userService && npm start",
+    "start:product": "cd productService && npm start",
+    "start:order": "cd orderService && npm start",
+    "start": "nodemon index.js",
+    "start:all": "concurrently \"npm run start:user\" \"npm run start:product\" \"npm run start:order\" \"npm run start\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "http-proxy-middleware": "^3.0.5"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
