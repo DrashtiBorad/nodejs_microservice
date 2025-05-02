@@ -9,14 +9,20 @@
     "start:product": "cd productService && npm start",
     "start:order": "cd orderService && npm start",
     "start": "nodemon index.js",
-    "start:all": "concurrently \"npm run start:user\" \"npm run start:product\" \"npm run start:order\" \"npm run start\""
+    "start:all": "concurrently \"npm run start:user\" \"npm run start:product\" \"npm run start:order\" \"npm run start\"",
+    "intall:user": "cd userService && npm install",
+    "intall:product": "cd productService && npm install",
+    "intall:order": "cd orderService && npm install",
+    "install:all": "concurrently \"npm run intall:user\" \"npm run intall:product\" \"npm run intall:order\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "http-proxy-middleware": "^3.0.5"
+    "dotenv": "^16.5.0",
+    "http-proxy-middleware": "^3.0.5",
+    "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"
