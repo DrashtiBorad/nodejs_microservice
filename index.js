@@ -5,6 +5,10 @@ dotenv.config();
 
 const app = express();
 
+app.get("/", (req, res) => {
+  res.send("API Gateway is running");
+});
+
 app.use(
   "/users",
   createProxyMiddleware({
