@@ -12,21 +12,23 @@ app.get("/", (req, res) => {
 app.use(
   "/users",
   createProxyMiddleware({
-    target: "http://localhost:5001",
+    target: process.env.USERS_SERVICE_URL,
+    changeOrigin: true,
   })
 );
 
 app.use(
   "/products",
   createProxyMiddleware({
-    target: "http://localhost:5002",
+    target: process.env.PRODUCTS_SERVICE_URL,
+    changeOrigin: true,
   })
 );
 
 app.use(
   "/orders",
   createProxyMiddleware({
-    target: "http://localhost:5003",
+    target: process.env.ORDERS_SERVICE_URL,
   })
 );
 
